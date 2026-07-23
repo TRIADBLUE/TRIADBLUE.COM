@@ -5,15 +5,15 @@
    ============================================================ */
 
 :root {
-  --primary: #1844A6;        /* swipesblue deep blue (TriadBlue logo blue) */
+  --primary: #1744A6;        /* swipesblue deep blue (TriadBlue logo blue) */
   --primary-hover: #123482;
   --deep: #064A6C;           /* hostsblue deep teal-blue */
   --red: #DC2626;            /* triad red accent */
-  --green: #10B981;          /* trusted green */
+  --green: #064A6C;          /* trusted green */
   --gold: #FFD700;
   --ink: #09080E;            /* near-black text */
-  --gray: #4B5563;
-  --muted: #6B7280;
+  --gray: #7A86A4;
+  --muted: #7A86A4;
   --light: #F9FAFB;
   --light-2: #F3F4F6;
   --border: #E5E7EB;
@@ -126,14 +126,14 @@ img { max-width: 100%; height: auto; }
   color: var(--primary);
   border-color: var(--primary);
 }
-.btn-outline:hover { background: rgba(24,68,166,.05); }
+.btn-outline:hover { background: rgba(23,68,166,.05); }
 
 .btn-green {
   background: var(--green);
   color: var(--white);
   box-shadow: var(--shadow-sm);
 }
-.btn-green:hover { background: #0EA271; box-shadow: var(--shadow-md); }
+.btn-green:hover { background: #053C57; box-shadow: var(--shadow-md); }
 
 .btn-sm { padding: 8px 16px; font-size: .875rem; }
 
@@ -152,7 +152,7 @@ img { max-width: 100%; height: auto; }
   text-align: center;
   border-bottom: 1px solid var(--border);
   background:
-    radial-gradient(ellipse 900px 480px at 50% -120px, rgba(24,68,166,.10), transparent 70%),
+    radial-gradient(ellipse 900px 480px at 50% -120px, rgba(23,68,166,.10), transparent 70%),
     var(--white);
 }
 
@@ -256,9 +256,9 @@ img { max-width: 100%; height: auto; }
   position: absolute;
   top: 14px;
   right: 14px;
-  background: rgba(16,185,129,.1);
-  color: #0B815A;
-  border: 1px solid rgba(16,185,129,.35);
+  background: rgba(6,74,108,.1);
+  color: #064A6C;
+  border: 1px solid rgba(6,74,108,.35);
   font-size: .7rem;
   font-weight: 800;
   letter-spacing: .04em;
@@ -301,7 +301,7 @@ img { max-width: 100%; height: auto; }
   width: 18px;
   height: 18px;
   border-radius: 50%;
-  background: rgba(16,185,129,.12) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%230B815A' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E") center/12px no-repeat;
+  background: rgba(6,74,108,.12) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23064A6C' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E") center/12px no-repeat;
 }
 
 .note { font-size: .9rem; color: var(--muted); }
@@ -312,7 +312,7 @@ img { max-width: 100%; height: auto; }
   font-size: .92rem;
   color: var(--primary);
   font-weight: 600;
-  background: rgba(24,68,166,.05);
+  background: rgba(23,68,166,.05);
   border-left: 3px solid var(--primary);
   padding: 10px 14px;
   border-radius: 0 var(--radius) var(--radius) 0;
@@ -440,7 +440,7 @@ img { max-width: 100%; height: auto; }
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  color: #0B815A;
+  color: #064A6C;
   font-weight: 700;
   font-size: .85rem;
 }
@@ -723,7 +723,7 @@ img { max-width: 100%; height: auto; }
     top: 10px;
     bottom: 10px;
     width: 2px;
-    background: linear-gradient(var(--primary), rgba(24,68,166,.15));
+    background: linear-gradient(var(--primary), rgba(23,68,166,.15));
     transform: translateX(-50%);
   }
 
