@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>TriadBlue — Three Platforms. One Unified Experience.</title>
+  <meta name="description" content="Diagnose your digital presence, power your infrastructure, and simplify payments — all inside a single, connected ecosystem built for small and medium businesses." />
+  <meta name="theme-color" content="#1844A6" />
+  <link rel="icon" type="image/png" href="https://cdn.triadblue.com/brands/triadblue/favicon.png" />
+  <link rel="manifest" href="manifest.json" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="apple-mobile-web-app-title" content="TriadBlue" />
+  <link rel="apple-touch-icon" href="https://cdn.triadblue.com/brands/triadblue/logo-image-180px.png" />
+  <link rel="canonical" href="https://triadblue.com" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Archivo+Narrow:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-row">
+      <a class="brand" href="/"><img src="https://cdn.triadblue.com/brands/triadblue/logo-lockup.png" alt="TriadBlue.com" /></a>
+      <nav class="site-nav">
+        <a href="#platforms">Platforms</a>
+        <a href="#blueprint">The Triad</a>
+        <a href="#ecosystem">Ecosystem</a>
+        <a href="apps.html">Products</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <div class="header-actions">
+        <a class="btn btn-outline btn-sm" href="https://triadblue.systems" target="_blank" rel="noopener noreferrer">Sign In</a>
+        <a class="btn btn-primary btn-sm" href="https://businessblueprint.io/assessment" target="_blank" rel="noopener noreferrer">Get Your Digital IQ&trade;</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero" data-screen="home">
+    <div class="container">
+      <h1>Three Platforms.<br /><span class="accent">One Unified Experience.</span></h1>
+      <p class="subhead">
+        Diagnose your digital presence, power your infrastructure, and simplify payments—all inside a single, connected ecosystem built specifically for small and medium businesses.
+      </p>
+      <div class="badges">
+        <span class="badge">&#9889; AI-Guided</span>
+        <span class="badge">&#128737; PCI Compliant</span>
+        <span class="badge">&#10003; Secure Hosting</span>
+        <span class="badge">&#127760; Built for SMBs</span>
+      </div>
+      <div class="hero-ctas">
+        <a class="btn btn-primary" href="https://businessblueprint.io" target="_blank" rel="noopener noreferrer">Start Your Blueprint</a>
+        <a class="btn btn-outline" href="#platforms">Explore Platforms</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Platforms Overview -->
+  <section id="platforms" class="section" data-screen="home">
+    <div class="container">
+      <div class="section-head">
+        <h2>The Triad System</h2>
+        <p class="subhead">
+          Your three essential platforms—seamlessly linked—operating as one unified console for complete business management.
+        </p>
+      </div>
+      <p class="swipe-hint">Swipe to explore &rarr;</p>
+      <div class="cards">
+        <article class="card">
+          <span class="live-badge">Live</span>
+          <a href="https://businessblueprint.io" target="_blank" rel="noopener noreferrer"><img class="brand-logo" src="https://cdn.triadblue.com/brands/businessblueprint/logo-lockup.png" alt="businessblueprint.io" /></a>
+          <p>We Assess. We Prescribe. You Grow. Your full digital footprint scored across six categories, with an AI-prescribed Digital Blueprint to grow your local business.</p>
+          <a class="mini-cta" href="#blueprint">Learn More &rarr;</a>
+        </article>
+        <article class="card">
+          <span class="live-badge">Live</span>
+          <a href="https://hostsblue.com" target="_blank" rel="noopener noreferrer"><img class="brand-logo" src="https://cdn.triadblue.com/brands/hostsblue/logo-lockup.png" alt="hostsblue.com" /></a>
+          <p>Professional domain registration, WordPress hosting, email, and security—the infrastructure home for your business online.</p>
+          <a class="mini-cta" href="#hosts">Learn More &rarr;</a>
+        </article>
+        <article class="card">
+          <span class="live-badge">Live</span>
+          <a href="https://swipesblue.com" target="_blank" rel="noopener noreferrer"><img class="brand-logo" src="https://cdn.triadblue.com/brands/swipesblue/logo-lockup.png" alt="swipesblue.com" /></a>
+          <p>A payment gateway built for SMBs—proprietary processing with custom checkout pages, shopping carts, and a white-label affiliate program.</p>
+          <a class="mini-cta" href="#swipes">Learn More &rarr;</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider" />
+
+  <!-- Platform browser -->
+  <section id="blueprint" class="container" data-screen="triad">
+    <div id="platform-browser"></div>
+    <div class="platform-tabs" role="tablist">
+      <button class="ptab active" data-panel="bp-panel"><img src="https://cdn.triadblue.com/brands/businessblueprint/logo-lockup.png" alt="businessblueprint.io" /></button>
+      <button class="ptab" data-panel="hosts"><img src="https://cdn.triadblue.com/brands/hostsblue/logo-lockup.png" alt="hostsblue.com" /></button>
+      <button class="ptab" data-panel="swipes"><img src="https://cdn.triadblue.com/brands/swipesblue/logo-lockup.png" alt="swipesblue.com" /></button>
+    </div>
+
+    <article class="platform" id="bp-panel">
+      <div class="logo-col">
+        <img src="https://cdn.triadblue.com/brands/businessblueprint/logo-lockup.png" alt="businessblueprint.io" />
+      </div>
+      <div>
+        <h2 class="tagline-only">We Assess. We Prescribe. You Grow.</h2>
+        <p style="color: var(--gray);">Your full digital footprint is scored across six categories — website performance, reviews, social media presence, local search rankings, directory accuracy, and overall visibility. Our AI then delivers your prescribed Digital Blueprint — a custom, data-driven plan with the exact apps, actions, and pricing your business needs to grow.</p>
+        <h4 style="color: var(--primary); margin: 20px 0 4px; font-size: 1rem;">A Blueprint to Your Growth:</h4>
+        <ol class="journey">
+          <li><svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="#960D71"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5" />
+  <path d="M9 18h6" />
+  <path d="M10 22h4" />
+</svg> Scan Your Digital Presence</li>
+          <li><svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="#FFA402"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="m10.5 20.5 10-10a4.95 4.95 0 1 0-7-7l-10 10a4.95 4.95 0 1 0 7 7Z" />
+  <path d="m8.5 8.5 7 7" />
+</svg> Get Your Custom Blueprint</li>
+          <li><svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="#008060"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+  <path d="M16 3.128a4 4 0 0 1 0 7.744" />
+  <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
+  <circle cx="9" cy="7" r="4" />
+</svg> Build Your Foundation</li>
+          <li><svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="#2073E3"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M12 6v16" />
+  <path d="m19 13 2-1a9 9 0 0 1-18 0l2 1" />
+  <path d="M9 11h6" />
+  <circle cx="12" cy="4" r="2" />
+</svg> Own Your Local Presence</li>
+          <li><svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="#FF6B00"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <circle cx="12" cy="12" r="10" />
+  <path d="m16.24 7.76-1.804 5.411a2 2 0 0 1-1.265 1.265L7.76 16.24l1.804-5.411a2 2 0 0 1 1.265-1.265z" />
+</svg> Activate Your Communications</li>
+          <li><img class="step-png" src="https://cdn.triadblue.com/brands/coachblue/logo-image-avatar.png" alt="Coach Blue" /> Never Grow Alone — Coach Blue, your 24/7 AI business coach</li>
+        </ol>
+        <p class="note" style="display:flex; align-items:center; gap:8px; flex-wrap:wrap;"><strong>Scanning technology powered by</strong> <a href="https://scansblue.com" target="_blank" rel="noopener noreferrer"><img class="brand-logo-sm" src="https://cdn.triadblue.com/brands/scansblue/logo-lockup.png" alt="scansblue.com" /></a></p>
+        <p style="margin-top: 24px;"><a class="btn btn-green" href="https://businessblueprint.io/assessment" target="_blank" rel="noopener noreferrer">Get Your Digital IQ&trade; Score</a></p>
+      </div>
+    </article>
+
+    <article id="hosts" class="platform">
+      <div class="logo-col">
+        <img src="https://cdn.triadblue.com/brands/hostsblue/logo-lockup.png" alt="hostsblue.com" />
+      </div>
+      <div>
+        <h2 class="tagline-only">Power Your Presence</h2>
+        <ul>
+          <li>Professional domain registration, transfer, and purchasing</li>
+          <li>Managed WordPress hosting built for performance</li>
+          <li>Business email and security solutions</li>
+          <li>Native platform hosting for BusinessBlueprint users</li>
+        </ul>
+        <p style="margin-top: 24px;"><a class="btn btn-primary" href="https://hostsblue.com" target="_blank" rel="noopener noreferrer">Launch Your Infrastructure</a></p>
+      </div>
+    </article>
+
+    <article id="swipes" class="platform">
+      <div class="logo-col">
+        <img src="https://cdn.triadblue.com/brands/swipesblue/logo-lockup.png" alt="swipesblue.com" />
+      </div>
+      <div>
+        <h2 class="tagline-only">Simplify How You Get Paid</h2>
+        <ul>
+          <li>Proprietary payment processing — online and in-person</li>
+          <li>Custom checkout pages and shopping carts</li>
+          <li>White-label affiliate program for partners</li>
+          <li>PCI-compliant architecture with bank-grade encryption</li>
+        </ul>
+        <p class="strategic">Strategic Commitment: All TriadBlue businesses use SwipesBlue exclusively — no third-party gateways</p>
+        <p style="margin-top: 24px;"><a class="btn btn-primary" href="https://swipesblue.com" target="_blank" rel="noopener noreferrer">Start Accepting Payments</a></p>
+      </div>
+    </article>
+  </section>
+
+  <hr class="divider" />
+
+  <!-- Unified Flow -->
+  <section class="section" data-screen="home triad">
+    <div class="container">
+      <div class="section-head">
+        <h2>One Login. Linked Dashboards.<br />A Seamless Flow.</h2>
+        <p class="subhead">
+          Move from visibility to infrastructure to payments without switching systems. Your business data flows automatically across all three platforms.
+        </p>
+      </div>
+      <div class="flow">
+        <div class="pill">Assess</div>
+        <span class="arrow">&rarr;</span>
+        <div class="pill">Launch</div>
+        <span class="arrow">&rarr;</span>
+        <div class="pill">Get Paid</div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider" />
+
+  <!-- Ecosystem -->
+  <section id="ecosystem" class="section" data-screen="ecosystem">
+    <div class="container">
+      <div class="section-head">
+        <h2>Also in the Ecosystem</h2>
+        <p class="subhead">
+          The platforms and tools that power TriadBlue behind the scenes — and stand on their own.
+        </p>
+      </div>
+      <p class="swipe-hint">Swipe to explore &rarr;</p>
+      <div class="cards cards-4">
+        <article class="card">
+          <a href="https://scansblue.com" target="_blank" rel="noopener noreferrer"><img class="brand-logo" src="https://cdn.triadblue.com/brands/scansblue/logo-lockup.png" alt="scansblue.com" /></a>
+          <p><strong style="color: var(--ink);">Get scanned. Get scored. Go Blue.</strong></p>
+          <p>Website assessment engine — understand structure, performance, and hidden issues instantly. Powers the Digital IQ&trade; assessment.</p>
+          <a class="mini-cta" href="https://scansblue.com" target="_blank" rel="noopener noreferrer">Learn More &rarr;</a>
+        </article>
+        <article class="card">
+          <a href="https://builderblue2.com" target="_blank" rel="noopener noreferrer"><img class="brand-logo" src="https://cdn.triadblue.com/brands/builderblue2/logo-lockup.png" alt="builderblue2.com" /></a>
+          <p><strong style="color: var(--ink);">Two AIs. One stage. Ship it.</strong></p>
+          <p>Build, deploy, and scale your projects with AI-powered compute. Architect plans it. Builder codes it. You approve it.</p>
+          <a class="mini-cta" href="https://builderblue2.com" target="_blank" rel="noopener noreferrer">Learn More &rarr;</a>
+        </article>
+        <article class="card">
+          <a href="https://triadblue.systems" target="_blank" rel="noopener noreferrer"><img class="brand-logo" src="https://cdn.triadblue.com/brands/tbsys/logo-lockup.png" alt="triadblue.systems" /></a>
+          <p><strong style="color: var(--ink);">The command center.</strong></p>
+          <p>Central management dashboard for the TriadBlue ecosystem — every project, GitHub integration, audit logging, and secure access in one place.</p>
+          <a class="mini-cta" href="https://triadblue.systems" target="_blank" rel="noopener noreferrer">Learn More &rarr;</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider" />
+
+  <!-- Value Proposition -->
+  <section class="section" data-screen="home ecosystem">
+    <div class="container">
+      <div class="section-head">
+        <h2>Built for Owners Who Didn't Grow Up Online</h2>
+        <p class="subhead">
+          We know technology can feel overwhelming. That's why we built TriadBlue to give you clarity, control, and confidence in your digital presence.
+        </p>
+      </div>
+      <div class="flow flow-row">
+        <div class="pill">Clarity</div>
+        <div class="pill">Control</div>
+        <div class="pill">Confidence</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="section" style="background: var(--light);" data-screen="faq">
+    <div class="container">
+      <div class="section-head">
+        <h2>Frequently Asked Questions</h2>
+      </div>
+      <div class="faq">
+        <article style="background: var(--white);">
+          <h4>What is a Digital IQ&trade; score?</h4>
+          <p>Your Digital IQ&trade; is a comprehensive snapshot of your online visibility, reputation, and digital readiness — scored across six categories. We analyze dozens of factors to generate a prescriptive blueprint that shows you exactly what to improve and how.</p>
+        </article>
+        <article style="background: var(--white);">
+          <h4>How do the dashboards connect?</h4>
+          <p>Unified login and linked data modules allow you to move seamlessly between BusinessBlueprint, HostsBlue, and SwipesBlue. Your information flows automatically—it feels like navigating pages within a single application.</p>
+        </article>
+        <article style="background: var(--white);">
+          <h4>Can I keep my current website and domain?</h4>
+          <p>Absolutely. We can migrate your existing assets to HostsBlue infrastructure or connect them seamlessly. You maintain full ownership while gaining the benefits of our integrated platform.</p>
+        </article>
+        <article style="background: var(--white);">
+          <h4>How fast can I start accepting payments?</h4>
+          <p>With SwipesBlue, most businesses can activate and begin processing payments within 24 hours, pending standard compliance review. We handle all the PCI complexity so you don't have to.</p>
+        </article>
+        <article style="background: var(--white);">
+          <h4>Do you offer done-for-me services?</h4>
+          <p>BusinessBlueprint is a DIY platform powered by Coach Blue, your 24/7 AI business coach. You complete your assessment, receive your digital blueprint, and execute with AI-guided assistance every step of the way.</p>
+        </article>
+        <article style="background: var(--white);">
+          <h4>What makes TriadBlue different from other platforms?</h4>
+          <p>Most platforms force you to piece together solutions from multiple vendors. TriadBlue gives you strategy, infrastructure, and payments in one connected system—built specifically for SMBs who want clarity without complexity.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer" data-screen="home faq">
+    <div class="container">
+      <p style="margin-bottom: 20px;"><img src="https://cdn.triadblue.com/brands/triadblue/ecosystem-lockup.png" alt="TriadBlue.com Ecosystem" style="height: 34px; width: auto;" /></p>
+      <div class="footer-logos">
+        <a href="https://businessblueprint.io" target="_blank" rel="noopener noreferrer"><img src="https://cdn.triadblue.com/brands/businessblueprint/logo-lockup.png" alt="businessblueprint.io" /></a>
+        <a href="https://hostsblue.com" target="_blank" rel="noopener noreferrer"><img src="https://cdn.triadblue.com/brands/hostsblue/logo-lockup.png" alt="hostsblue.com" /></a>
+        <a href="https://swipesblue.com" target="_blank" rel="noopener noreferrer"><img src="https://cdn.triadblue.com/brands/swipesblue/logo-lockup.png" alt="swipesblue.com" /></a>
+        <a href="https://scansblue.com" target="_blank" rel="noopener noreferrer"><img src="https://cdn.triadblue.com/brands/scansblue/logo-lockup.png" alt="scansblue.com" /></a>
+        <a href="https://builderblue2.com" target="_blank" rel="noopener noreferrer"><img src="https://cdn.triadblue.com/brands/builderblue2/logo-lockup.png" alt="builderblue2.com" /></a>
+      </div>
+      <p>&copy; <span id="year">2026</span> TriadBlue. PCI Compliant &bull; SSL Secure &bull; Cloud Hosting &bull; NMI Powered</p>
+      <p>
+        <a href="https://businessblueprint.io/privacy">Privacy Policy</a>
+        <a href="https://businessblueprint.io/terms">Terms of Service</a>
+        <a href="mailto:support@triadblue.com">Contact Support</a>
+      </p>
+    </div>
+  </footer>
+
+  <!-- App tab bar (mobile only) -->
+  <nav class="tab-bar" aria-label="App navigation">
+    <a class="tab-item" href="#home" data-tab="home">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+      <span>Home</span>
+    </a>
+    <a class="tab-item" href="#triad" data-tab="triad">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13.73 4a2 2 0 0 0-3.46 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3z"/></svg>
+      <span>The Triad</span>
+    </a>
+    <a class="tab-item" href="#ecosystem" data-tab="ecosystem">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+      <span>Ecosystem</span>
+    </a>
+    <a class="tab-item" href="apps.html" data-tab="products">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="7" height="7" x="3" y="3" rx="1"/><rect width="7" height="7" x="14" y="3" rx="1"/><rect width="7" height="7" x="14" y="14" rx="1"/><rect width="7" height="7" x="3" y="14" rx="1"/></svg>
+      <span>Products</span>
+    </a>
+    <a class="tab-item" href="#faq" data-tab="faq">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg>
+      <span>FAQ</span>
+    </a>
+  </nav>
+
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+  <script src="script.js"></script>
+</body>
+</html>

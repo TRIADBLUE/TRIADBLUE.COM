@@ -1,0 +1,17 @@
+{
+  "name": "TriadBlue",
+  "short_name": "TriadBlue",
+  "description": "Three Platforms. One Unified Experience. Strategy, infrastructure, and payments for SMBs.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FFFFFF",
+  "theme_color": "#1844A6",
+  "icons": [
+    {
+      "src": "assets/triadblue-favicon.png",
+      "sizes": "any",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}
