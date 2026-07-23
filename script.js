@@ -16,7 +16,8 @@
   /* Map legacy anchors to app screens */
   var screenFor = {
     home: "home", platforms: "home",
-    blueprint: "triad", triad: "triad", "bp-panel": "triad", hosts: "triad", swipes: "triad",
+    blueprint: "ecosystem", triad: "ecosystem", "bp-panel": "ecosystem",
+    hosts: "ecosystem", swipes: "ecosystem",
     ecosystem: "ecosystem",
     faq: "faq"
   };

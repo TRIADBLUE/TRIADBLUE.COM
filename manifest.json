@@ -1,6 +1,6 @@
 {
-  "name": "TriadBlue",
-  "short_name": "TriadBlue",
+  "name": "TRIADBLUE.COM",
+  "short_name": "TRIADBLUE.COM",
   "description": "Three Platforms. One Unified Experience. Strategy, infrastructure, and payments for SMBs.",
   "start_url": "/",
   "display": "standalone",
@@ -8,8 +8,14 @@
   "theme_color": "#1844A6",
   "icons": [
     {
-      "src": "assets/triadblue-favicon.png",
-      "sizes": "any",
+      "src": "https://cdn.triadblue.com/brands/triadblue/logo-image-192px.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "https://cdn.triadblue.com/brands/triadblue/logo-image-512px.png",
+      "sizes": "512x512",
       "type": "image/png",
       "purpose": "any"
     }
