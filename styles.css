@@ -79,7 +79,9 @@ img { max-width: 100%; height: auto; }
   flex-wrap: wrap;
 }
 
-.brand img { height: 44px; width: auto; display: block; }
+.brand img { height: 44px; width: auto; max-width: none; display: block; }
+
+.brand { flex-shrink: 0; }
 
 .site-nav {
   display: flex;
@@ -496,16 +498,17 @@ img { max-width: 100%; height: auto; }
 
   .site-header { backdrop-filter: none; background: var(--white); }
 
-  .header-row { flex-wrap: nowrap; padding: 10px 0; }
-  .brand img { height: 26px; }
+  .header-row { flex-wrap: nowrap; padding: 10px 0; gap: 10px; }
+  .brand img { height: 22px; }
 
-  .header-actions { display: flex; gap: 8px; }
+  .header-actions { display: flex; gap: 8px; flex-shrink: 0; }
   .header-actions .btn-outline { display: none; }
   .header-actions .btn-primary {
-    padding: 8px 14px;
-    font-size: .78rem;
+    padding: 6px 10px;
+    font-size: .66rem;
     border-radius: 999px;
     white-space: nowrap;
+    box-shadow: none;
   }
 
   /* ---------- App screens ---------- */
