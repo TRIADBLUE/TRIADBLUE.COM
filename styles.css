@@ -850,9 +850,6 @@ img { max-width: 100%; height: auto; }
 /* Brand logo images (icon + URL wordmark) */
 .brand-logo { height: 40px; width: auto; display: inline-block; }
 
-/* builderblue2.com stencil lockup reads smaller — boost ~30% for visual parity */
-.brand-logo-bb2, img.brand-logo[alt="builderblue2.com"] { height: 58px; }
-.footer-logos img[alt="builderblue2.com"] { height: 48px; }
 .brand-logo-lg { height: 52px; width: auto; }
 .brand-logo-sm { height: 28px; width: auto; }
 
@@ -876,8 +873,52 @@ img { max-width: 100%; height: auto; }
 
 @media (max-width: 820px) {
   .brand-logo { height: 34px; }
-  .brand-logo-bb2, img.brand-logo[alt="builderblue2.com"] { height: 48px; }
-  .footer-logos img[alt="builderblue2.com"] { height: 37px; }
   .brand-logo-lg { height: 42px; }
   .footer-logos img { height: 22px; }
+}
+
+
+/* ============================================================
+   BRAND LOGO NORMALIZATION — sizes derived from each file's
+   measured letter height so all wordmarks render equal.
+   (letters/canvas: hosts 1.0, scans 1.0, TB .71, swipes .53,
+    businessblueprint .46, builderblue2 .38)
+   ============================================================ */
+
+/* Cards: equal visible letters (~28px), centered in a fixed slot */
+.card a:has(img.brand-logo) { display: flex; align-items: center; height: 76px; }
+img.brand-logo[alt="hostsblue.com"],
+img.brand-logo[alt="scansblue.com"] { height: 28px; }
+img.brand-logo[alt="swipesblue.com"] { height: 53px; }
+img.brand-logo[alt="businessblueprint.io"] { height: 61px; }
+img.brand-logo[alt="builderblue2.com"] { height: 74px; }
+
+/* Footer: equal visible letters (~21px) */
+.footer-logos { align-items: center; }
+.footer-logos img[alt="hostsblue.com"],
+.footer-logos img[alt="scansblue.com"] { height: 21px; }
+.footer-logos img[alt="swipesblue.com"] { height: 40px; }
+.footer-logos img[alt="businessblueprint.io"] { height: 46px; }
+.footer-logos img[alt="builderblue2.com"] { height: 55px; }
+
+/* Inline mentions: letters match the surrounding text (~0.72em cap) */
+.ib { vertical-align: middle; }
+.ib[alt="TRIADBLUE.COM"] { height: 1.0em; }
+.ib[alt="businessblueprint.io"] { height: 1.55em; }
+.ib[alt="hostsblue.com"] { height: 0.75em; }
+.ib[alt="swipesblue.com"] { height: 1.35em; }
+h1 .ib[alt="TRIADBLUE.COM"], h2 .ib[alt="TRIADBLUE.COM"] { height: 1.02em; }
+
+@media (max-width: 820px) {
+  .card a:has(img.brand-logo) { height: 60px; }
+  img.brand-logo[alt="hostsblue.com"],
+  img.brand-logo[alt="scansblue.com"] { height: 22px; }
+  img.brand-logo[alt="swipesblue.com"] { height: 42px; }
+  img.brand-logo[alt="businessblueprint.io"] { height: 48px; }
+  img.brand-logo[alt="builderblue2.com"] { height: 58px; }
+  .footer-logos img[alt="hostsblue.com"],
+  .footer-logos img[alt="scansblue.com"] { height: 17px; }
+  .footer-logos img[alt="swipesblue.com"] { height: 32px; }
+  .footer-logos img[alt="businessblueprint.io"] { height: 37px; }
+  .footer-logos img[alt="builderblue2.com"] { height: 44px; }
 }
