@@ -907,7 +907,7 @@ img.brand-logo[alt="builderblue2.com"] { height: 74px; }
 .ib[alt="businessblueprint.io"] { height: 1.55em; }
 .ib[alt="hostsblue.com"] { height: 0.75em; }
 .ib[alt="swipesblue.com"] { height: 1.35em; }
-h1 .ib[alt="TRIADBLUE.COM"], h2 .ib[alt="TRIADBLUE.COM"] { height: 1.02em; }
+h1 .ib[alt="TRIADBLUE.COM"], h2 .ib[alt="TRIADBLUE.COM"] { height: 1.16em; vertical-align: -0.18em; }
 
 @media (max-width: 820px) {
   .card a:has(img.brand-logo) { height: 60px; }
