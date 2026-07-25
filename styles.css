@@ -879,6 +879,22 @@ img { max-width: 100%; height: auto; }
 
 
 /* ============================================================
+   TYPED BRAND UNIT — icon + typed wordmark. Brand law: the icon
+   and the full name appear together, every mention, every time.
+   TRIADBLUE.COM: Archivo SemiExpanded 800, #1844A6, small caps at
+   150/170, black duplicate 2pt right+down (2/170em), white 4pt
+   outline (4/170em), all scaled to the surrounding text.
+   ============================================================ */
+
+.bunit { display: inline-flex; align-items: center; gap: 0.22em; vertical-align: -0.12em; }
+.bunit .bicon { height: 1.28em; width: auto; }
+.bwm { position: relative; display: inline-block; font-stretch: 112.5%; font-weight: 800; letter-spacing: -0.01em; white-space: nowrap; }
+.bwm .layer { -webkit-text-stroke: 0.0235em #EEFBFF; paint-order: stroke fill; }
+.bwm .back { position: absolute; left: 0.0118em; top: 0.0118em; color: #09080E; z-index: 0; user-select: none; }
+.bwm .front { position: relative; z-index: 1; color: #1844A6; }
+.bwm .sc { font-size: .882em; }
+
+/* ============================================================
    BRAND LOGO NORMALIZATION — sizes derived from each file's
    measured letter height so all wordmarks render equal.
    (letters/canvas: hosts 1.0, scans 1.0, TB .71, swipes .53,
