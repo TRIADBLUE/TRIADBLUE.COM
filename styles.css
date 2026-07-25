@@ -5,7 +5,7 @@
    ============================================================ */
 
 :root {
-  --primary: #1744A6;        /* swipesblue deep blue (TriadBlue logo blue) */
+  --primary: #1844A6;        /* swipesblue deep blue (TriadBlue logo blue) */
   --primary-hover: #123482;
   --deep: #064A6C;           /* hostsblue deep teal-blue */
   --red: #DC2626;            /* triad red accent */
@@ -151,7 +151,7 @@ img { max-width: 100%; height: auto; }
   color: var(--primary);
   border-color: var(--primary);
 }
-.btn-outline:hover { background: rgba(23,68,166,.05); }
+.btn-outline:hover { background: rgba(24,68,166,.05); }
 
 .btn-green {
   background: var(--green);
@@ -177,7 +177,7 @@ img { max-width: 100%; height: auto; }
   text-align: center;
   border-bottom: 1px solid var(--border);
   background:
-    radial-gradient(ellipse 900px 480px at 50% -120px, rgba(23,68,166,.10), transparent 70%),
+    radial-gradient(ellipse 900px 480px at 50% -120px, rgba(24,68,166,.10), transparent 70%),
     var(--white);
 }
 
@@ -337,7 +337,7 @@ img { max-width: 100%; height: auto; }
   font-size: .92rem;
   color: var(--primary);
   font-weight: 600;
-  background: rgba(23,68,166,.05);
+  background: rgba(24,68,166,.05);
   border-left: 3px solid var(--primary);
   padding: 10px 14px;
   border-radius: 0 var(--radius) var(--radius) 0;
@@ -752,7 +752,7 @@ img { max-width: 100%; height: auto; }
     top: 10px;
     bottom: 10px;
     width: 2px;
-    background: linear-gradient(var(--primary), rgba(23,68,166,.15));
+    background: linear-gradient(var(--primary), rgba(24,68,166,.15));
     transform: translateX(-50%);
   }
 

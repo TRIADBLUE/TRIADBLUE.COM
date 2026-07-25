@@ -5,7 +5,7 @@
   "start_url": "/",
   "display": "standalone",
   "background_color": "#FFFFFF",
-  "theme_color": "#1744A6",
+  "theme_color": "#1844A6",
   "icons": [
     {
       "src": "https://cdn.triadblue.com/brands/triadblue/logo-image-192px.png",
