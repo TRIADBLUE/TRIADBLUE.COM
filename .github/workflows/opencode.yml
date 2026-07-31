@@ -20,14 +20,16 @@ jobs:
       pull-requests: read
       issues: read
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v6
+      - name: Setup Python
+        uses: actions/setup-python@v5
         with:
-          persist-credentials: false
+          python-version: '3.11'
 
-      - name: Run opencode
-        uses: anomalyco/opencode/github@latest
+      - name: Install dependencies
+        run: pip install anthropic PyGithub
+
+      - name: Run the AI Agent
         env:
-          OPENCODE_API_KEY: ${{ secrets.OPENCODE_API_KEY }}
-        with:
-          model: opencode/deepseek-v4-pro
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python .github/scripts/agent.py
