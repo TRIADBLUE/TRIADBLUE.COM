@@ -21,7 +21,6 @@ except Exception as e:
     print(f"Failed to read event data: {e}")
     sys.exit(1)
 
-# Get the comment body, issue/PR number, and repo name
 comment_body = event_data.get('comment', {}).get('body', '')
 issue_number = event_data.get('issue', {}).get('number')
 repo_full_name = os.getenv("GITHUB_REPOSITORY")
@@ -33,30 +32,58 @@ if not comment_body or not issue_number:
 # 3. Initialize DeepSeek and GitHub clients
 client = OpenAI(
     api_key=api_key,
-    base_url="https://api.deepseek.com"  # This is what points it to DeepSeek instead of OpenAI
+    base_url="https://api.deepseek.com"
 )
 github = Github(github_token)
 repo = github.get_repo(repo_full_name)
 
-# 4. Send the user's comment to DeepSeek
-system_prompt = """You are a senior software engineer and code reviewer. 
-You are helping a user review code and make decisions. 
-Be clear, helpful, and direct in your advice."""
+# 4. Fetch the PR diff if this is a Pull Request
+code_context = ""
+try:
+    issue = repo.get_issue(issue_number)
+    if issue.pull_request:
+        pr = repo.get_pull(issue_number)
+        files = pr.get_files()
+        diff_content = ""
+        for file in files:
+            if file.patch:  # This gives us the actual line-by-line changes
+                diff_content += f"\n--- File: {file.filename}\n{file.patch}\n"
+        
+        if diff_content:
+            code_context = f"The user is asking about the following code changes in their Pull Request:\n{diff_content}"
+        else:
+            code_context = "The user did not provide specific code changes in the PR diff, or the diff is too large to fetch."
+    else:
+        code_context = "This is an issue thread, not a Pull Request, so no code diff is available."
+except Exception as e:
+    print(f"Could not fetch PR diff: {e}")
+    code_context = "Could not fetch the specific code diff for this request."
+
+# 5. Send the combined context to DeepSeek
+system_prompt = """You are a senior software engineer and code reviewer. You are helping a user review their Pull Request and make coding decisions. 
+Be direct, constructive, and provide actionable feedback. Use markdown code blocks when showing examples."""
+
+user_prompt = f"""The user triggered this action with the comment: '{comment_body}'.
+
+Here is the code context from the Pull Request:
+{code_context}
+
+Please respond as a helpful coding assistant and code reviewer."""
 
 try:
     response = client.chat.completions.create(
-        model="deepseek-chat",  # Or use "deepseek-coder" if you prefer
+        model="deepseek-coder", # Specifically optimized for code review!
         messages=[
             {"role": "system", "content": system_prompt},
-            {"role": "user", "content": f"The user triggered this action with this comment: '{comment_body}'. Please respond as a helpful coding assistant."}
+            {"role": "user", "content": user_prompt}
         ],
-        max_tokens=1024
+        max_tokens=2048
     )
     ai_reply = response.choices[0].message.content
 except Exception as e:
     ai_reply = f"Sorry, I encountered an error trying to reach DeepSeek: {e}"
 
-# 5. Post DeepSeek's response back to the GitHub issue/PR comment section
+# 6. Post DeepSeek's response back to the GitHub issue/PR comment section
 try:
     issue = repo.get_issue(number=issue_number)
     issue.create_comment(ai_reply)
