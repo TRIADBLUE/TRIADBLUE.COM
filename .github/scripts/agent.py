@@ -1,11 +1,11 @@
 import os
 import json
 import sys
-from anthropic import Anthropic
+from openai import OpenAI
 from github import Github
 
 # 1. Load environment variables
-api_key = os.getenv("ANTHROPIC_API_KEY")
+api_key = os.getenv("DEEPSEEK_API_KEY2")
 github_token = os.getenv("GITHUB_TOKEN")
 event_path = os.getenv("GITHUB_EVENT_PATH")
 
@@ -30,34 +30,33 @@ if not comment_body or not issue_number:
     print("Could not find comment or issue number in event data.")
     sys.exit(1)
 
-# 3. Initialize AI and GitHub clients
-claude = Anthropic(api_key=api_key)
+# 3. Initialize DeepSeek and GitHub clients
+client = OpenAI(
+    api_key=api_key,
+    base_url="https://api.deepseek.com"  # This is what points it to DeepSeek instead of OpenAI
+)
 github = Github(github_token)
 repo = github.get_repo(repo_full_name)
 
-# (Optional: If this is a Pull Request, you could fetch the PR diff here to give Claude context!)
-# pr = repo.get_pull(issue_number)
-# diff = pr.get_files() # ... etc
-
-# 4. Send the user's comment to Claude
+# 4. Send the user's comment to DeepSeek
 system_prompt = """You are a senior software engineer and code reviewer. 
 You are helping a user review code and make decisions. 
 Be clear, helpful, and direct in your advice."""
 
 try:
-    response = claude.messages.create(
-        model="claude-3-5-sonnet-20240620",
-        max_tokens=1024,
-        system=system_prompt,
+    response = client.chat.completions.create(
+        model="deepseek-chat",  # Or use "deepseek-coder" if you prefer
         messages=[
+            {"role": "system", "content": system_prompt},
             {"role": "user", "content": f"The user triggered this action with this comment: '{comment_body}'. Please respond as a helpful coding assistant."}
-        ]
+        ],
+        max_tokens=1024
     )
-    ai_reply = response.content[0].text
+    ai_reply = response.choices[0].message.content
 except Exception as e:
-    ai_reply = f"Sorry, I encountered an error trying to reach the AI: {e}"
+    ai_reply = f"Sorry, I encountered an error trying to reach DeepSeek: {e}"
 
-# 5. Post Claude's response back to the GitHub issue/PR comment section
+# 5. Post DeepSeek's response back to the GitHub issue/PR comment section
 try:
     issue = repo.get_issue(number=issue_number)
     issue.create_comment(ai_reply)
