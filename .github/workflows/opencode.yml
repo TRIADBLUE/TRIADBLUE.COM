@@ -30,6 +30,6 @@ jobs:
 
       - name: Run the AI Agent
         env:
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  DEEPSEEK_API_KEY2: ${{ secrets.DEEPSEEK_API_KEY2 }}
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: python .github/scripts/agent.py
