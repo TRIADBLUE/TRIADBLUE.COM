@@ -16,6 +16,11 @@ jobs:
       pull-requests: read
       issues: read
     steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
