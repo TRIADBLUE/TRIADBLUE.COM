@@ -33,4 +33,5 @@ jobs:
         env:
           DEEPSEEK_API_KEY2: ${{ secrets.DEEPSEEK_API_KEY2 }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ORG_ACCESS_TOKEN: ${{ secrets.ORG_ACCESS_TOKEN }}
         run: python .github/scripts/agent.py
