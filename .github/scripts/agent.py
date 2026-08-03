@@ -60,7 +60,6 @@ SUPPORT_REPOS = ['tbsys', 'linksblue', 'ai-archive']
 TARGET_REPOS = CORE_REPOS + SUPPORT_REPOS
 
 def fetch_ecosystem_context(org_name, target_repo_names):
-    """Fetches root structure and key configs from the specific target repos."""
     context = f"Ecosystem Analysis Target Repos: {', '.join(target_repo_names)}\n\n"
     try:
         org = github_org.get_organization(org_name)
@@ -88,7 +87,6 @@ def fetch_ecosystem_context(org_name, target_repo_names):
                         pass
             except Exception as e:
                 context += f"\nError scanning repo: {e}"
-            # Sleep to prevent GitHub API rate limiting
             time.sleep(1.0)
         context += f"\n\n--- End of targeted ecosystem scan ---"
     except Exception as e:
@@ -178,7 +176,6 @@ except Exception as e:
 # ==========================
 def post_review(data, pr_obj):
     if not pr_obj:
-        # Fallback for Issue comments (if not a PR)
         summary = f"**Ecosystem Implications:**\n{data.get('ecosystem_implications', 'N/A')}\n\n"
         if data.get('supporting_repo_changes'):
             summary += "**Supporting Repo Changes:**\n"
@@ -188,7 +185,6 @@ def post_review(data, pr_obj):
         issue.create_comment(summary)
         return
 
-    # 1. Post inline comments on specific files
     inline_list = data.get('inline_comments', [])
     try:
         for ic in inline_list:
@@ -200,11 +196,10 @@ def post_review(data, pr_obj):
                     line=ic["line"],
                     subject_type="line"
                 )
-                time.sleep(0.5) 
+                time.sleep(0.5)
     except Exception as e:
-        pass 
+        pass
 
-    # 2. Post the Master Summary Report
     summary_body = "## 🧠 Ecosystem Audit & Review Summary\n\n"
     summary_body += "### Impact & Functionality Audit on 5 Core Apps:\n"
     summary_body += f"{data.get('ecosystem_implications', 'No specific implications flagged.')}\n\n"
