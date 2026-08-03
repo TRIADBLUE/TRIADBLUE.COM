@@ -119,15 +119,21 @@ except Exception as e:
     pr = None
 
 # ==========================
-# 6. SEND PROMPT TO DEEPSEEK
+# 6. SEND PROMPT TO DEEPSEEK (UPDATED FOR QUALITY & FUNCTIONALITY)
 # ==========================
 system_prompt = """You are a senior software architect at TriadBlue.
 Core Apps: businessblueprint, swipesblue, hostsblue, scansblue, builderblue2.
 Supporting Infra: tbsys (triadblue.systems), linksblue, ai-archive.
 
+YOUR PRIMARY GOAL IS FUNCTIONAL INTEGRITY & COMPLETENESS:
+1. Deeply analyze the PR diff to ensure the code does exactly what it claims to do.
+2. STRICTLY FLAG any 'placeholders', 'TODO', 'FIXME', 'pass', 'raise NotImplementedError', or stubbed-out logic left in the code.
+3. Ensure data types, error handling, and logical flow are correct and complete.
+4. Review how this change impacts the 5 Core apps and 3 Supporting infra repos.
+
 You MUST output ONLY a raw JSON object (no markdown). The JSON MUST have these 3 keys:
-1. "inline_comments": A list of objects with {"path": str, "line": int, "body": str}. Only for files changed in THIS PR.
-2. "ecosystem_implications": A string summarizing how this PR affects the 5 Core Apps (e.g., breaking changes, security, performance).
+1. "inline_comments": A list of objects with {"path": str, "line": int, "body": str}. Only for files changed in THIS PR. (Point out specific placeholders or logic gaps here).
+2. "ecosystem_implications": A string summarizing how this PR affects the 5 Core Apps (e.g., breaking changes, security, performance, deployment order).
 3. "supporting_repo_changes": A list of objects with {"repo": str, "action": str} detailing specific code/config/dependency changes required in the 3 Supporting Infra repos to accommodate this PR."""
 
 user_prompt = f"""
@@ -139,7 +145,7 @@ PR CODE DIFF (Current Repo):
 ECOSYSTEM CONTEXT (Targeted Repos):
 {ecosystem_context}
 
-Perform the architecture review now. Return only the JSON object.
+Do a strict functional audit. Flag all TODOs, FIXMEs, or placeholder logic. Return only the JSON object.
 """
 
 try:
@@ -194,13 +200,13 @@ def post_review(data, pr_obj):
                     line=ic["line"],
                     subject_type="line"
                 )
-                time.sleep(0.5) # Avoid GitHub secondary rate limit
+                time.sleep(0.5) 
     except Exception as e:
-        pass # If inline fails, we still want the summary to post
+        pass 
 
     # 2. Post the Master Summary Report
-    summary_body = "## 🧠 Ecosystem Review Summary\n\n"
-    summary_body += "### Impact on 5 Core Apps:\n"
+    summary_body = "## 🧠 Ecosystem Audit & Review Summary\n\n"
+    summary_body += "### Impact & Functionality Audit on 5 Core Apps:\n"
     summary_body += f"{data.get('ecosystem_implications', 'No specific implications flagged.')}\n\n"
 
     changes = data.get('supporting_repo_changes', [])
